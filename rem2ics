@@ -6,6 +6,8 @@
 #  Mark Atwood <me@mark.atwood.name>
 #  Paul Hinze <paul dot t dot hinze at gmail dot com>
 #  Michael Schultz <mjschultz at gmail dot com>
+#  Jochen Sprickerhof https://launchpad.net/~v-launchpad-jochen-sprickerhof-de
+#
 # 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -228,9 +230,19 @@ Add B<-usetag> option to allow for UIDs to stay the same across multiple runs
  by using the remind TAG clause.
  Patch by Tim Weber E<lt>scy at scytale dot nameE<gt>
 
+=item version 0.94 2016-08-30
+
+Bug fixes
+ Fix Typo in DTSTAMP time stamp generation
+ Add VALUE=DATE to DTSTART if only date is given
+ Bugs reported and patches provided by Jochen Sprickerhof https://launchpad.net/~v-launchpad-jochen-sprickerhof-de
+
+
 =back
 
 =head1 SEE ALSO
+
+L<https://launchpad.net/rem2ics>
 
 L<http://mark.atwood.name/code/rem2ics>
 
@@ -244,7 +256,7 @@ L<remind(1)>
 
 =head1 AUTHOR
 
-Copyright 2007,2008,2009 by Mark Atwood E<lt>me+rem2ics@mark.atwood.nameE<gt>. L<http://mark.atwood.name/>.
+Copyright 2007,2008,2009 by Mark Atwood E<lt>me+rem2ics@mark.atwood.nameE<gt>
 
 Please report bugs (with patches, if possible).
 
@@ -260,7 +272,7 @@ use Getopt::Long;
 use Pod::Usage;
 
 my $app_name = "rem2ics";
-my $app_version = "0.93";
+my $app_version = "0.94";
 
 # process the command line
 my %options;
@@ -496,7 +508,7 @@ foreach $v (@events) {
 # output header
 print "BEGIN:VCALENDAR\015\012"
     . "VERSION:2.0\015\012"
-    . "PRODID:http://mark.atwood.name/code/rem2ics"
+    . "PRODID:https://launchpad.net/rem2ics"
     . " $app_name $app_version\015\012";
 
 # output each vevent

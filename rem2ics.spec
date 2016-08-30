@@ -1,12 +1,12 @@
 Name:           rem2ics
-Version:        0.93
+Version:        0.94
 Release:        1%{?dist}
 Summary:        Converts the output of "remind -s" into RFC2445 iCalendar format
 
 Group:          Applications/Productivity
 License:        GPLv2+
-URL:            http://mark.atwood.name/code/rem2ics/
-Source0:        http://mark.atwood.name/code/rem2ics/rem2ics-%{version}.tar.gz
+URL:            https://launchpad.net/rem2ics
+Source0:        https://launchpad.net/rem2ics/rem2ics-%{version}.tar.gz
 Source1:        rem2ics-Makefile
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
